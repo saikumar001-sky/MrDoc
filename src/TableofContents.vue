@@ -1,12 +1,13 @@
 <template>
   <nav class="sticky top-0 bg-white p-4">
+    <p class="mb-2 font-semibold">Table of content</p>
     <ul class="space-y-2 text-sm text-slate-500">
       <li
         v-for="section in sections"
         :key="section.id"
         class="hover:text-primary-500 hover:border-l-2 hover:border-primary-500 ps-2 border-l-2 mb-0 pb-0"
       >
-        <a :href="`#${section.id}`" @click.prevent="scrollToSection(section.id)">{{ section.label }}</a>
+        <a :href="`#${section.id}`" :class="section.is_main?'':'ps-3'" @click.prevent="scrollToSection(section.id)">{{ section.label }}</a>
       </li>
     </ul>
   </nav>

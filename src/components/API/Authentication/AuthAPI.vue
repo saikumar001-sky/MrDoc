@@ -244,14 +244,14 @@
     import TableofContents from "../../../TableofContents.vue"
   import {ref} from "vue"
   const tocSections = [
-  { id: 'auth-api', label: 'Authentication Api' },
-  { id: 'auth-endpoint', label: 'Endpoint' },
-  { id: 'auth-curl', label: 'cURL' },
-  { id: 'auth-req', label: 'Request Schema' },
-  { id: 'auth-sample-req', label: 'Sample Request Data' },
-  { id: 'auth-res', label: 'Response Schema' },
-  { id: 'auth-sample-res', label: 'Sample Response Data' },
-  { id: 'auth-status-codes', label: 'Status Codes' },
+  { id: 'auth-api', label: 'Authentication Api',is_main:true },
+  { id: 'auth-endpoint', label: 'Endpoint' ,is_main:false},
+  { id: 'auth-curl', label: 'cURL' ,is_main:false},
+  { id: 'auth-req', label: 'Request Schema' ,is_main:false},
+  { id: 'auth-sample-req', label: 'Sample Request Data',is_main:false },
+  { id: 'auth-res', label: 'Response Schema',is_main:false },
+  { id: 'auth-sample-res', label: 'Sample Response Data' ,is_main:false},
+  { id: 'auth-status-codes', label: 'Status Codes',is_main:false },
 ];
  const data=ref(` curl -v "http://staging-gloremit.tranglo.com:2014/v1/payments/bills/requests/1208?sIdType=1
 &sIdNum=710320-71-5379&sFirstName=Kai&sLastName=Yen&bCountry=PH&bCurrency=PHP&bAmount=200
