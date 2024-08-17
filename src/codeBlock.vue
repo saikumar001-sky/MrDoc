@@ -1,9 +1,9 @@
 <template>
   <pre>
-      <code class="language-javascript">{{ data }}</code>
+      <code class="language-javascript ">{{ data }}</code>
 </pre>
 </template>
-  <script setup lang="js">
+<script setup lang="js">
 import { ref, onMounted } from "vue";
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css'; // Import Prism CSS
@@ -16,7 +16,5 @@ onMounted(async () => {
     data.value=props.code
     Prism.highlightAll();
 });
-
-  </script>
-  <style></style>
-  
+</script>
+<style></style>

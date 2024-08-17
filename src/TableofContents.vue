@@ -4,29 +4,38 @@
       <li
         v-for="section in sections"
         :key="section.id"
-        class="hover:text-primary-500 hover:border-l-2 hover:border-primary-500 ps-2 border-l-2 mb-0 pb-0"
+        class="ps-2 mb-0 pb-0"
+        :class="[
+          section.is_main
+            ? 'font-bold'
+            : 'ml-6 hover:text-primary-500 hover:border-l-2 hover:border-primary-500 border-l-2',
+        ]"
       >
-        <a :href="`#${section.id}`" @click.prevent="scrollToSection(section.id)">{{ section.label }}</a>
+        <a
+          :href="`#${section.id}`"
+          @click.prevent="scrollToSection(section.id)"
+          >{{ section.label }}</a
+        >
       </li>
     </ul>
   </nav>
 </template>
-  
-  <script setup>
+
+<script setup>
 import { ref, onMounted, onUnmounted, watch } from "vue";
 
 const props = defineProps({
   sections: {
     type: Array,
     required: true,
-    default: () => []
-  }
+    default: () => [],
+  },
 });
 
 const activeSection = ref(null);
 
 const handleScroll = () => {
-  props.sections.forEach(section => {
+  props.sections.forEach((section) => {
     const element = document.getElementById(section.id);
     const rect = element.getBoundingClientRect();
     if (
@@ -38,7 +47,7 @@ const handleScroll = () => {
   });
 };
 
-const scrollToSection = sectionId => {
+const scrollToSection = (sectionId) => {
   const section = document.getElementById(sectionId);
   section.scrollIntoView({ behavior: "smooth" });
 };
@@ -54,8 +63,8 @@ onUnmounted(() => {
 
 watch(() => props.sections, handleScroll);
 </script>
-  
-  <style scoped>
+
+<style scoped>
 .font-bold {
   font-weight: bold;
 }
@@ -64,4 +73,3 @@ watch(() => props.sections, handleScroll);
   color: #3b82f6; /* Tailwind's blue-500 color */
 }
 </style>
-  
