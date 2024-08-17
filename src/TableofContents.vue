@@ -1,5 +1,6 @@
 <template>
   <nav class="sticky top-0 bg-white p-4">
+    <p class="mb-2 font-semibold">Table of content</p>
     <ul class="space-y-2 text-sm text-slate-500">
       <li
         v-for="section in sections"
