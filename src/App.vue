@@ -1,5 +1,5 @@
 <template>
-  <div class="main-wrapper h-screen w-100 dark:bg-gray-700">
+  <div class="main-wrapper h-screen w-full dark:bg-gray-700">
     <nav class="h-20 bg-slate-100">
       <div class="py-3 ms-8">
         <img :src="main_logo" alt srcset class="w-48" />
@@ -7,22 +7,27 @@
     </nav>
     <div class="flex flex-row">
       <aside class="px-3 w-80 text-slate-500">
-        <div v-for="(menu,index) in sidemenu" :key="index">
+        <div v-for="(menu, index) in sidemenu" :key="index">
           <button
             class="font-medium text-left w-full p-2 hover:text-primary-500"
-            @click="menu.main_is_active=!menu.main_is_active"
+            @click="menu.main_is_active = !menu.main_is_active"
           >
             {{ menu.title }}
-            <span
-              class="float-right mx-2 font-semibold"
-            >{{ menu.main_is_active?'-':'+' }}</span>
+            <span class="float-right mx-2 font-semibold">{{
+              menu.main_is_active ? "-" : "+"
+            }}</span>
           </button>
-          <div class="list-none ps-6 mt-1 w-full transition-all" v-if="menu.main_is_active">
-            <ul v-for="(submenu,subindex) in menu.content" :key="subindex">
+          <div
+            class="list-none ps-6 mt-1 w-full transition-all"
+            v-if="menu.main_is_active"
+          >
+            <ul v-for="(submenu, subindex) in menu.content" :key="subindex">
               <button
                 @click="alert('hi')"
                 class="py-2 w-full text-left hover:text-primary-500"
-              >{{ submenu.sub_title }}</button>
+              >
+                {{ submenu.sub_title }}
+              </button>
             </ul>
           </div>
         </div>
@@ -46,7 +51,7 @@ import {onMounted, ref} from "vue"
 
 const sidemenu=ref([{
   id:1,
-  title:"Service Specification",
+  title:"Service Details",
   main_is_active:false,
   content:[
     {
@@ -129,6 +134,5 @@ const sidemenu=ref([{
 ]
 
 }])
-
 </script>
 <style></style>
