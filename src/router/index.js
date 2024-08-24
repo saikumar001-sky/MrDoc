@@ -2,7 +2,7 @@ import { createWebHashHistory, createRouter } from "vue-router";
 
 const routes = [
   {
-    path: "/auth",
+    path: "/",
     name: "Authentication",
     component: () => import("../components/API/Authentication/AuthAPI.vue"),
   },
@@ -37,6 +37,46 @@ const routes = [
     path: "/exchange-rate",
     name: "exchange rate",
     component: () => import("../components/Exchange rates/exchangeRate.vue"),
+  },
+  {
+    path: "/interface-specification",
+    name: "Interface Specification",
+    component: () =>
+      import("../components/interface specifiction/interfaceSpecification.vue"),
+  },
+  {
+    path: "/security",
+    name: "Security",
+    component: () => import("../components/security/security.vue"),
+  },
+  {
+    path: "/requestHeader",
+    name: "Request Header",
+    component: () => import("../components/request header/requestHeader.vue"),
+  },
+  {
+    path: "/digital-signature",
+    name: "Digital Signature",
+    component: () =>
+      import("../components/Digital Signature/digitalSignature.vue"),
+  },
+  {
+    path: "/postman-collections",
+    name: "Postman Collections",
+    component: () =>
+      import("../components/Postman Collections/postmanCollections.vue"),
+  },
+  {
+    path: "/document-history",
+    name: "Document History",
+    component: () =>
+      import("../components/Document History/documentHistory.vue"),
+  },
+  {
+    path: "/support-contact",
+    name: "Support Contacts",
+    component: () =>
+      import("../components/Support Contacts/supportContact.vue"),
   },
 ];
 
