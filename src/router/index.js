@@ -2,12 +2,12 @@ import { createWebHashHistory, createRouter } from "vue-router";
 
 const routes = [
   {
-    path: "/",
+    path: "/authentication",
     name: "Authentication",
     component: () => import("../components/API/Authentication/AuthAPI.vue"),
   },
   {
-    path: "/add-sender",
+    path: "/addSender",
     name: "Add Sender",
     component: () => import("../components/Add Sender/AddSender.vue"),
   },
@@ -17,24 +17,24 @@ const routes = [
     component: () => import("../components/Add Kyc/AddKyc.vue"),
   },
   {
-    path: "/bene",
+    path: "/addBeneficiary",
     name: "Create Beneficiary",
     component: () => import("../components/Beneficiary/createBeneficiary.vue"),
   },
   {
-    path: "/do-trans",
+    path: "/doTransaction",
     name: "Do Transaction Pay",
     component: () =>
       import("../components/Do Transaction Pay/doTransactionPay.vue"),
   },
   {
-    path: "/transaction-status",
+    path: "/transactionStatus",
     name: "transaction status",
     component: () =>
       import("../components/transaction status/transactionStatus.vue"),
   },
   {
-    path: "/exchange-rate",
+    path: "/exchangerate",
     name: "exchange rate",
     component: () => import("../components/Exchange rates/exchangeRate.vue"),
   },

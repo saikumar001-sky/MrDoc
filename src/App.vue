@@ -13,21 +13,15 @@
             @click="menu.main_is_active = !menu.main_is_active"
           >
             {{ menu.title }}
-            <span class="float-right mx-2 font-semibold">{{
+            <span class="float-right mx-2 font-semibold">
+              {{
               menu.main_is_active ? "-" : "+"
-            }}</span>
+              }}
+            </span>
           </button>
-          <div
-            class="list-none ps-6 mt-1 w-full transition-all"
-            v-if="menu.main_is_active"
-          >
+          <div class="list-none ps-6 mt-1 w-full transition-all" v-if="menu.main_is_active">
             <ul v-for="(submenu, subindex) in menu.content" :key="subindex">
-              <button
-                @click="route(submenu.path, submenu)"
-                class="py-2 w-full text-left hover:text-primary-500"
-              >
-                {{ submenu.sub_title }}
-              </button>
+              <button @click="$router.push(submenu.path)" class="py-2 w-full text-left hover:text-primary-500">{{ submenu.sub_title }}</button>
             </ul>
           </div>
         </div>
@@ -57,17 +51,17 @@ const sidemenu=ref([{
   main_is_active:false,
   content:[
     {
-      sub_id:1,
-      sub_title:"Document History",
-      is_sub_active:false,
-      path:'/document-history'
-    },
-    {
-      sub_id:1,
-      sub_title:"Support Contacts",
-      is_sub_active:false,
-      path:'/support-contact'
-    }
+  sub_id: 1,
+  sub_title: "Document History",
+  is_sub_active: false,
+  path: "/docHistory"
+},
+{
+  sub_id: 2,
+  sub_title: "Support Contacts",
+  is_sub_active: false,
+  path: "/supportContacts"
+}
   ]
 },{
   id:1,
@@ -75,83 +69,80 @@ const sidemenu=ref([{
   main_is_active:false,
   content:[
     {
-      sub_id:1,
-      sub_title:"Interface Specification",
-      is_sub_active:false,
-      path:"/interface-specification"
-    },
-    {
-      sub_id:1,
-      sub_title:"Security",
-      is_sub_active:false,
-      path:"/security"
-    },
-    {
-      sub_id:1,
-      sub_title:"Request Header",
-      is_sub_active:false,
-      path:"/requestHeader"
-    },
-    {
-      sub_id:1,
-      sub_title:"Digital Signature",
-      is_sub_active:false,
-      path:"/digital-signature"
-    },
-    {
-      sub_id:1,
-      sub_title:"Postman Collections",
-      is_sub_active:false,
-      path:"/postman-collections"
-    }
+  sub_id: 1,
+  sub_title: "Interface Specification",
+  is_sub_active: false,
+  path: "/interfaceSpecification"
+},
+{
+  sub_id: 2,
+  sub_title: "Security",
+  is_sub_active: false,
+  path: "/security"
+},
+{
+  sub_id: 3,
+  sub_title: "Request Header",
+  is_sub_active: false,
+  path: "/requestHeader"
+},
+{
+  sub_id: 4,
+  sub_title: "Digital Signature",
+  is_sub_active: false,
+  path: "/digitalSignature"
+},
+{
+  sub_id: 5,
+  sub_title: "Postman Collections",
+  is_sub_active: false,
+  path: "/postmanCollections"
+}
+
   ]
 },{
   id:1,
   title:"API Reference",
   main_is_active:true,
   content:[
-  {
-    "sub_id": 1,
-    "sub_title": "Authentication",
-    "is_sub_active": true,
-    "path":"/"
-  },
-  {
-    "sub_id": 2,
-    "sub_title": "Add KYC",
-    "is_sub_active": false,
-     "path":"/add-kyc"
-  },
-  {
-    "sub_id": 3,
-    "sub_title": "Add Sender",
-    "is_sub_active": false,
-     "path":"/add-sender"
-  },
-  {
-    "sub_id": 4,
-    "sub_title": "Add Beneficiary",
-    "is_sub_active": false,
-     "path":"/bene"
-  },
-  {
-    "sub_id": 5,
-    "sub_title": "Do Transaction",
-    "is_sub_active": false,
-     "path":"/do-trans"
-  },
-  {
-    "sub_id": 6,
-    "sub_title": "Transaction Status",
-    "is_sub_active": false,
-     "path":"/transaction-status"
-  },
-  {
-    "sub_id": 7,
-    "sub_title": "Exchange Rates",
-    "is_sub_active": false,
-     "path":"/exchange-rate"
-  },
+    {
+  "sub_id": 1,
+  "sub_title": "Authentication",
+  "is_sub_active": false,
+  "path": "/authentication"
+},
+
+{
+  "sub_id": 3,
+  "sub_title": "Add Sender",
+  "is_sub_active": false,
+  "path": "/addSender"
+},
+{
+  "sub_id": 4,
+  "sub_title": "Add Beneficiary",
+  "is_sub_active": false,
+  "path": "/addBeneficiary"
+},
+{
+  "sub_id": 2,
+  "sub_title": "Get Rates",
+  "is_sub_active": false,
+  "path": "/exchangerate"
+},
+{
+  "sub_id": 5,
+  "sub_title": "Do Transaction",
+  "is_sub_active": false,
+  "path": "/doTransaction"
+},
+{
+  "sub_id": 6,
+  "sub_title": "Transaction Status",
+  "is_sub_active": false,
+  "path": "/transactionStatus"
+}
+
 ]
 
 }])
