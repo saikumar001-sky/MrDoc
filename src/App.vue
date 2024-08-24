@@ -21,7 +21,10 @@
           </button>
           <div class="list-none ps-6 mt-1 w-full transition-all" v-if="menu.main_is_active">
             <ul v-for="(submenu, subindex) in menu.content" :key="subindex">
-              <button @click="$router.push(submenu.path)" class="py-2 w-full text-left hover:text-primary-500">{{ submenu.sub_title }}</button>
+              <button
+                @click="$router.push(submenu.path)"
+                class="py-2 w-full text-left hover:text-primary-500"
+              >{{ submenu.sub_title }}</button>
             </ul>
           </div>
         </div>
@@ -48,31 +51,31 @@ const router = useRouter();
 const sidemenu=ref([{
   id:1,
   title:"Service Details",
-  main_is_active:false,
+  main_is_active:true,
   content:[
     {
   sub_id: 1,
   sub_title: "Document History",
   is_sub_active: false,
-  path: "/docHistory"
+  path: "/"
 },
 {
   sub_id: 2,
   sub_title: "Support Contacts",
   is_sub_active: false,
-  path: "/supportContacts"
+  path: "/support-contact"
 }
   ]
 },{
   id:1,
   title:"Developer Guide",
-  main_is_active:false,
+  main_is_active:true,
   content:[
     {
   sub_id: 1,
   sub_title: "Interface Specification",
   is_sub_active: false,
-  path: "/interfaceSpecification"
+  path: "/interface-specification"
 },
 {
   sub_id: 2,
@@ -90,13 +93,13 @@ const sidemenu=ref([{
   sub_id: 4,
   sub_title: "Digital Signature",
   is_sub_active: false,
-  path: "/digitalSignature"
+  path: "/digital-signature"
 },
 {
   sub_id: 5,
   sub_title: "Postman Collections",
   is_sub_active: false,
-  path: "/postmanCollections"
+  path: "/postman-collections"
 }
 
   ]

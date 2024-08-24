@@ -67,7 +67,7 @@ const routes = [
       import("../components/Postman Collections/postmanCollections.vue"),
   },
   {
-    path: "/document-history",
+    path: "/",
     name: "Document History",
     component: () =>
       import("../components/Document History/documentHistory.vue"),
